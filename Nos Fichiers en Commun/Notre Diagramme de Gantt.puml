@@ -1,0 +1,39 @@
+@startgantt
+skinparam locale fr_FR
+Project starts 2026-01-19
+
+saturday are closed
+sunday are closed
+2026-02-21 to 2026-03-08 is closed
+2026-04-18 to 2026-05-03 is closed
+2026-05-14 to 2026-05-17 is closed
+
+monday are colored in lightblue
+tuesday are colored in lightblue
+friday are colored in lightblue
+
+[Projet] starts 2026-01-19
+[Projet] is 1% complete
+[Projet] ends 2026-06-10
+
+[diagramme d'utilisation] starts 2026-01-19
+[diagramme d'utilisation] is 33% complete 
+[diagramme d'utilisation] is colored in blue
+[diagramme d'utilisation] ends 2026-01-21
+
+[diagramme de gantt] starts 2026-01-20
+[diagramme de gantt] ends 2026-01-22
+
+
+
+legend
+Legend:
+|= Color |= Personne |
+|<#orange> | Valentin |
+|<#pink>| Georges |
+|<#green> | Ayoub |
+|<#red> | Luca |
+|<#blue> | Sabrina |
+|<#yellow> | Christopher |
+end legend
+@endgantt

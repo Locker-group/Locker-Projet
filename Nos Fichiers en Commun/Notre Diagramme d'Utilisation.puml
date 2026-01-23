@@ -1,0 +1,49 @@
+@startuml
+actor Utilisateur
+participant IHM
+Database BaseDonnée
+participant Log
+collections Casier
+
+Utilisateur -> IHM : Authentification
+IHM -> BaseDonnée : Verification Autorisation
+BaseDonnée -> IHM : Authentification Refusée
+BaseDonnée --> Log : Ajout de l'information dans les log
+BaseDonnée -> IHM : Authentification Réussie
+BaseDonnée --> Log : Ajout de l'information dans les log
+IHM -> Utilisateur : Demmande de l'action 
+Utilisateur -> IHM : entre son choix
+IHM -> BaseDonnée : verification autorisation d'acces
+BaseDonnée -> IHM : acces refusée
+BaseDonnée --> Log : Ajout de l'information dans les log
+BaseDonnée -> IHM : acces autorisée
+BaseDonnée --> Log : Ajout de l'information dans les log
+
+Utilisateur -> IHM : choix "Prendre"
+Utilisateur -> IHM : choix element 
+IHM -> BaseDonnée : verification stock + n°casier
+IHM -> Casier : Ouverture casier correspondant
+Utilisateur -> Casier : recuperation materiel + fermeture casier
+IHM -> Utilisateur : Commbien d'element avez vous pris ?
+Utilisateur -> IHM : repond 
+IHM -> BaseDonnée : met a jour le stock
+IHM --> Log : ajout du prelevement dans les log 
+
+Utilisateur -> IHM : choix "Déposer"
+IHM -> BaseDonnée : recuperation des stock
+IHM -> Utilisateur : Choix element a remplire
+IHM -> Casier : Ouverture casier correspondant
+Utilisateur -> Casier : Depot materiel + fermeture casier
+Utilisateur -> IHM : entrer le nombre d'element ajouter
+IHM -> BaseDonnée : met a jour le stock
+IHM --> Log : ajout du depot dans les log
+
+Utilisateur -> IHM : choix "Administrateur"
+
+
+IHM -> Utilisateur : Déconnection
+IHM --> Log : Ajout de l'information dans les log
+
+
+
+@enduml
